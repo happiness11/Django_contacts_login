@@ -22,9 +22,16 @@
             <li><a href="/register">Register</a></li>
            
          {% endif %}
-     </ul>   
-        
-        
+     </ul> 
+       {% if request.user.is_authenticated %}
+        <p> You are logged in as {{request.user.email}}</p>
+        {% endif %}
+        <ul>
+           {% for contact in contacts %} 
+           <li>{{contact}}</li>
+            {% endfor %}
+            
+        </ul>
         
   
     
